@@ -1,0 +1,533 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>People Kids - Tienda infantil</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="The Plaza eCommerce Template">
+	<meta name="keywords" content="plaza, eCommerce, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="img/icon.ico" rel="shortcut icon"/>
+
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="container-fluid">
+			<!-- logo -->
+			<div class="site-logo">
+				<img src="img/Capture777.png" alt="logo" style="width: 166px;height: 50px;">
+			</div>
+			<!-- responsive -->
+			<div class="nav-switch">
+				<i class="fa fa-bars"></i>
+			</div>
+			<div class="header-right">
+				<a href="login.html" class="card-bag"><img src="img/icons/2.png" alt=""><span>Q</span></a>
+				<a href="#" class="search"><img src="img/icons/search.png" alt=""></a>
+			</div>
+			<!-- site menu -->
+			<ul class="main-menu">
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="categorie1.html">Niñas</a></li>
+				<li><a href="categorie.html">Niños</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html">Contactanos</a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Hero section -->
+	<section>
+		<section class="hero-section set-bg" data-setbg="img/bg2.jpg">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item">
+				<div class="hs-left"><img src="img/slider/img.png" alt=""></div>
+				<div class="hs-right">
+					<div class="hs-content">
+						<div class="price">Desde $100.000</div>
+						<h2><span>2019</span> <br>Coleccion Niños</h2>
+						<a href="" class="site-btn">Comprar Ahora!</a>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item">
+				<div class="hs-left"><img src="img/slider/img2.png" alt=""></div>
+				<div class="hs-right">
+					<div class="hs-content">
+						<div class="price">Desde $100.000</div>
+						<h2><span>2019</span> <br>Coleccion Niñas</h2>
+						<a href="" class="site-btn">Comprar Ahora!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+	<!-- Intro section -->
+
+	<section class="intro-section spad pb-0">
+		<div class="section-title">
+			<h2>Productos Unicos</h2>
+			<p>Nuestras recomendaciones</p>
+		</div>
+		<div class="intro-slider">
+			<ul class="slidee">
+				<?php
+				include("conexion.php");
+					$sql = "select * from producto where fk_estado_producto='1' order by producto.id_producto desc";
+			        if(!$result = $db->query($sql))
+			        {
+			            die('Hay un error corriendo en la consulta [' . $db->connect_error . ']');
+			        }
+			        while($row = $result->fetch_assoc())
+			        {
+			            $iid_producto = $row['id_producto'];
+			            $nnombre = $row['descripcion'];
+			            $pprecio = $row['fk_provedor'];
+			            $sqli="select Imagen from producto where id_producto='$iid_producto'";
+			            $res=mysqli_query($db,$sqli);
+			            $data=mysqli_fetch_array($res);
+			            echo '<li>';
+						echo '<div class="intro-item">';
+						echo '<figure>';
+			            echo '<img src="'.$data['Imagen'].'" width="200px" height="200px">';
+			            echo '</figure>';
+						echo '<div class="product-info">';
+						echo '<h5>'.$nnombre.'</h5>';
+						echo '<p>'.$pprecio.'</p>';
+						echo '</div>';
+						echo '</div>';
+						echo '</li>';
+			        }
+				?>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="img/intro/1.jpg" alt="#">
+						</figure>
+						<div class="product-info">
+							<h5>Pink Sunglasses</h5>
+							<p>$319.50</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="img/intro/2.jpg" alt="#">
+						</figure>
+						<div class="product-info">
+							<h5>Black Nighty</h5>
+							<p>$319.50</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="img/intro/3.jpg" alt="#">
+							<div class="bache">Nuevo</div>
+						</figure>
+						<div class="product-info">
+							<h5>Yellow Sholder bag</h5>
+							<p>$319.50</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="img/intro/4.jpg" alt="#">
+						</figure>
+						<div class="product-info">
+							<h5>Yellow Sunglasses</h5>
+							<p>$319.50</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="img/intro/5.jpg" alt="#">
+						</figure>
+						<div class="product-info">
+							<h5>Black Sholder bag</h5>
+							<p>$319.50</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="container">
+			<div class="scrollbar">
+				<div class="handle">
+					<div class="mousearea"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Intro section end -->
+
+
+	<!-- Featured section -->
+	<div class="featured-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="featured-item">
+						<img src="img/4.jpg" alt="">
+						<a href="#" class="site-btn">Ver mas</a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="featured-item mb-0">
+						<img src="img/5.jpg" alt="">
+						<a href="#" class="site-btn">Ver mas</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Featured section end -->
+
+
+	<!-- Product section -->
+	<section class="product-section spad">
+		<div class="container">
+			<ul class="product-filter controls">
+				<li class="control" data-filter=".new">Nuevos</li>
+				<li class="control" data-filter="all">Recomendado</li>
+				<li class="control" data-filter=".best">Mas vendidos</li>
+			</ul>
+			<div class="row" id="product-filter">
+				<div class="mix col-lg-3 col-md-6 best">
+					<div class="product-item">
+						<figure>
+							<img src="img/products/1.jpg" alt="">
+							<div class="pi-meta">
+								<div class="pi-m-left">
+									<img src="img/icons/eye.png" alt="">
+									<p>Vista rapida</p>
+								</div>
+								<div class="pi-m-right">
+									<img src="img/icons/heart.png" alt="">
+									<p>Guardar</p>
+								</div>
+							</div>
+						</figure>
+						<div class="product-info">
+							<h6>Long red Shirt</h6>
+							<p>$39.90</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="mix col-lg-3 col-md-6 new">
+					<div class="product-item">
+						<figure>
+							<img src="img/products/2.jpg" alt="">
+							<div class="bache">Nuevo</div>
+							<div class="pi-meta">
+								<div class="pi-m-left">
+									<img src="img/icons/eye.png" alt="">
+									<p>Vista rapida</p>
+								</div>
+								<div class="pi-m-right">
+									<img src="img/icons/heart.png" alt="">
+									<p>Guardar</p>
+								</div>
+							</div>
+						</figure>
+						<div class="product-info">
+							<h6>Hype grey shirt</h6>
+							<p>$19.50</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="mix col-lg-3 col-md-6 best">
+					<div class="product-item">
+						<figure>
+							<img src="img/products/3.jpg" alt="">
+							<div class="pi-meta">
+								<div class="pi-m-left">
+									<img src="img/icons/eye.png" alt="">
+									<p>Vista rapida</p>
+								</div>
+								<div class="pi-m-right">
+									<img src="img/icons/heart.png" alt="">
+									<p>Guardar</p>
+								</div>
+							</div>
+						</figure>
+						<div class="product-info">
+							<h6>long sleeve jacket</h6>
+							<p>$59.90</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="mix col-lg-3 col-md-6 new best">
+					<div class="product-item">
+						<figure>
+							<img src="img/products/4.jpg" alt="">
+							<div class="bache sale">En oferta</div>
+							<div class="pi-meta">
+								<div class="pi-m-left">
+									<img src="img/icons/eye.png" alt="">
+									<p>Vista rapida</p>
+								</div>
+								<div class="pi-m-right">
+									<img src="img/icons/heart.png" alt="">
+									<p>Guardar</p>
+								</div>
+							</div>
+						</figure>
+						<div class="product-info">
+							<h6>Denim men shirt</h6>
+							<p>$32.20</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="mix col-lg-3 col-md-6 best">
+					<div class="product-item">
+						<figure>
+							<img src="img/products/5.jpg" alt="">
+							<div class="pi-meta">
+								<div class="pi-m-left">
+									<img src="img/icons/eye.png" alt="">
+									<p>Vista rapida</p>
+								</div>
+								<div class="pi-m-right">
+									<img src="img/icons/heart.png" alt="">
+									<p>Guardar</p>
+								</div>
+							</div>
+						</figure>
+						<div class="product-info">
+							<h6>Long red Shirt</h6>
+							<p>$39.90</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="mix col-lg-3 col-md-6 new">
+					<div class="product-item">
+						<figure>
+							<img src="img/products/6.jpg" alt="">
+							<div class="bache">Nuevo</div>
+							<div class="pi-meta">
+								<div class="pi-m-left">
+									<img src="img/icons/eye.png" alt="">
+									<p>Vista rapida</p>
+								</div>
+								<div class="pi-m-right">
+									<img src="img/icons/heart.png" alt="">
+									<p>Guardar</p>
+								</div>
+							</div>
+						</figure>
+						<div class="product-info">
+							<h6>Hype grey shirt</h6>
+							<p>$19.50</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="mix col-lg-3 col-md-6 best">
+					<div class="product-item">
+						<figure>
+							<img src="img/products/7.jpg" alt="">
+							<div class="pi-meta">
+								<div class="pi-m-left">
+									<img src="img/icons/eye.png" alt="">
+									<p>Vista rapida</p>
+								</div>
+								<div class="pi-m-right">
+									<img src="img/icons/heart.png" alt="">
+									<p>Guardar</p>
+								</div>
+							</div>
+						</figure>
+						<div class="product-info">
+							<h6>long sleeve jacket</h6>
+							<p>$59.90</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="mix col-lg-3 col-md-6 best">
+					<div class="product-item">
+						<figure>
+							<img src="img/products/8.jpg" alt="">
+							<div class="pi-meta">
+								<div class="pi-m-left">
+									<img src="img/icons/eye.png" alt="">
+									<p>Vista rapida</p>
+								</div>
+								<div class="pi-m-right">
+									<img src="img/icons/heart.png" alt="">
+									<p>Guardar</p>
+								</div>
+							</div>
+						</figure>
+						<div class="product-info">
+							<h6>Denim men shirt</h6>
+							<p>$32.20</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Product section end -->
+
+
+	<!-- Blog section -->	
+	<section class="blog-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<div class="featured-item">
+						<img src="img/6.jpg" alt="">
+						<a href="#" class="site-btn">Ver Más</a>
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<h4 class="bgs-title">Recomendaciones de Moda</h4>
+					<div class="blog-item">
+						<div class="bi-thumb">
+							<img src="img/1.jpg" alt="">
+						</div>
+						<div class="bi-content">
+							<h5>10 tips to dress like a queen</h5>
+							<div class="bi-meta">July 02, 2018   |   By maria deloreen</div>
+							<a href="#" class="readmore">Read More</a>
+						</div>
+					</div>
+					<div class="blog-item">
+						<div class="bi-thumb">
+							<img src="img/2.jpg" alt="">
+						</div>
+						<div class="bi-content">
+							<h5>Fashion Outlet products</h5>
+							<div class="bi-meta">July 02, 2018   |   By Jessica Smith</div>
+							<a href="#" class="readmore">Read More</a>
+						</div>
+					</div>
+					<div class="blog-item">
+						<div class="bi-thumb">
+							<img src="img/3.jpg" alt="">
+						</div>
+						<div class="bi-content">
+							<h5>the little black dress just for you</h5>
+							<div class="bi-meta">July 02, 2018   |   By maria deloreen</div>
+							<a href="#" class="readmore">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog section end -->	
+
+
+
+	<!-- Footer top section -->
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-8 col-sm-12">
+					<div class="footer-widget about-widget">
+						<img src="img/logo Alpha.png" class="footer-logo" alt="">
+						<p>Compañia de software</p>
+						<div class="cards">
+							<img src="img/tarjetas/5.png" alt="">
+							<img src="img/tarjetas/4.png" alt="">
+							<img src="img/tarjetas/3.png" alt="">
+							<img src="img/tarjetas/2.png" alt="">
+							<img src="img/tarjetas/1.png" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6">
+					<div class="footer-widget">
+						<h6 class="fw-title">Acerca de nosotros</h6>
+						<ul>
+							<li><a href="#">Marcas</a></li>
+							<li><a href="#">Trabaja con Nosotros</a></li>
+							<li><a href="#">Soporte</a></li>
+							<li><a href="#">Terminos de uso</a></li>
+							<li><a href="#">Politicas de privacidad</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-4 col-sm-6">
+					<div class="footer-widget">
+						<h6 class="fw-title">Contactanos</h6>
+						<div class="text-box">
+							<p>People Kids S.A.S</p>
+							<p>Direccion: </p>
+							<p>Telefonos:</p>
+							<p>Correo:</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Footer top section end -->
+
+		<!-- Footer section -->
+	<footer class="footer-section">
+		<div class="container">
+			<p class="copyright">
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados| <i class="fa fa-heart-o" aria-hidden="true"></i> De <a href="" target="_blank">People Kids S.A.S</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+		</div>
+	</footer>
+	<!-- Footer section end -->
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/mixitup.min.js"></script>
+	<script src="js/sly.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/main.js"></script>
+    </body>
+</html>
