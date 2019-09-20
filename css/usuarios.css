@@ -1,0 +1,118 @@
+body{
+	font-family: arial;
+	margin: 0;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+
+a{
+  display: block;
+  padding: 20px 5px;
+  color: black;
+  text-decoration: none;
+
+}
+
+.cuadro{
+	background-color: #F0EFEF;
+    position: absolute;
+    width: 100%;
+	height: auto;
+}
+
+
+
+
+.boton1{
+	background-color: rgb(243, 5, 2);
+	opacity: 0.9;
+	margin: 5px;
+	text-align: center;
+	height: auto;
+	width: 200px;
+	float: right;
+	border-radius: 8px;
+}
+
+.boton1:hover{
+	background-color: rgb(243, 5, 2, 0.8);
+	opacity: 0.9;
+	margin: 5px;
+	text-align: center;
+	height: auto;
+	width: 200px;
+	float: right;
+	border-radius: 8px;
+	
+	
+}
+
+.caja{
+	justify-content: center;
+	display: flex;
+}
+
+.caja2{
+	justify-content: center;
+	display: flex;
+}
+
+.box{
+	/*background-color: aqua;*/
+	max-width: 90%;
+	height: auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.boton2{
+	background-color: white;
+	border-radius: 8px;
+	text-align: center;
+	width: 200px;
+	height: auto;
+
+}
+
+.boton3{
+	background-color: white;
+	border-radius: 8px;
+	text-align: center;
+	width: 200px;
+	height: auto;
+
+}
+
+.boton4{
+	background-color: white;
+	border-radius: 8px;
+	text-align: center;
+	width: 200px;
+	height: auto;
+
+
+}
+
+.informacion{
+	background-color: rgb(243, 238, 236 );
+	border-radius: 8px;
+	padding: 10px 20px;
+	max-width: 80%;
+	height: auto; 
+}
+
+.alineacion{
+	/*padding: 50px;*/
+    display: inline-block;
+    margin: 5px;
+    /*margin-left: 100px;*/
+
+}
+

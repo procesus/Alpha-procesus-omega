@@ -1,0 +1,240 @@
+body{
+   font-family: arial;
+    margin: 0;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+
+a{
+  text-decoration: none;
+}
+
+.sub-rayado {
+  color: black !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-color: #00D748;
+  transition: all 1s ease;
+  position: relative;
+  width: 120px;
+
+  margin: 10px;
+  cursor: pointer;
+}
+.sub-rayado:hover {
+  background: #00BC42;
+  color: #fff !important;
+}
+
+
+.sub-rayado2 {
+  color: black !important;
+  font-size: 21px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-color: #CF0000;
+  transition: all 1s ease;
+  position: relative;
+  width: 120px;
+  height: 60px;
+  margin: 10px;
+}
+.sub-rayado2:hover {
+  background: #B40000;
+  color: #fff !important;
+}
+
+.circulo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid #AAAAAA;
+}
+
+.circulo-gmail {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #AAAAAA;
+}
+
+/*------------------------------------------------------------Barra del nombre-----------------------------*/
+
+.barra-nombre{
+  background-color: transparent;
+  font-size:17px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #B30A0A;
+  outline:none;
+}
+
+/* Estado activo */
+input.barra-nombre:focus:valid{
+  top:-18px;
+  /*font-size:13px;*/
+  color: black;
+}
+input.barra-nombre:focus:invalid:required{
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+.padre{
+ /*background-color: aqua;*/
+  max-width: 260px;
+  height: 41px;
+  border-radius: 5px;
+
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+
+.hijo{
+  margin-bottom: 100px;
+  background: rgb(193, 193, 193);
+  border: 1px solid #000000;
+  border-radius: 8px;
+  width: 800px;
+  height: auto;
+}
+
+/*----------------------------------------------AYUDA CSS ALETAR DERECHA-------------------------------------------*/
+
+  .final__tooltip {
+    position: relative;
+    height: 41px;
+    width: auto;
+    /*COLOR DE CONTORNO*/
+    /*background: #f2395a;*/
+    color: white;
+    font-size: 18px;
+    margin: 0 auto;
+   }
+   .final__tooltip:before {
+     position: absolute;
+     z-index: 2;
+     display: none;
+     width: 240px;
+     max-width: 240px;
+     padding: 10px;
+     font-size: 0.8em;
+
+     border-radius: 5px;
+     background-color: rgba(0, 0, 0, 0.8);
+     color: white;
+     content: attr(title);
+   }
+   .final__tooltip:after {
+     position: absolute;
+     z-index: 1;
+     display: none;
+     width: 0;
+     height: 0;
+     border: 5px solid transparent;
+     content: "";
+   }
+   .final__tooltip:hover:before,
+   .final__tooltip:hover:after {
+     display: inline-block;
+     text-align: center;
+   }
+ 
+   .final__tooltip.right:before {
+     top: 50%;
+     left: calc(100% + 5px);
+     transform: translateY(-50%);
+   }
+   .final__tooltip.right:after {
+     top: 50%;
+     left: 100%;
+     transform: translateY(-50%);
+     border-left-width: 0;
+     border-right-color: rgba(0, 0, 0, 0.8);
+   }
+
+   /*--------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+.left {
+    position: relative;
+    height: 200px;
+    width: 490px;
+    /*background: aqua;*/
+    color: white;
+    text-align: center;
+
+    font-size: 18px;
+    margin: 0 auto;
+   }
+   .left:before {
+     position: absolute;
+     z-index: 2;
+     display: none;
+     width: 200px;
+     max-width: 200px;
+     padding: 10px;
+     font-size: 0.8em;
+     line-height: 1.4;
+     border-radius: 5px;
+     background-color: rgba(0, 0, 0, 0.8);
+     color: white;
+     content: attr(title);
+   }
+   .left:after {
+     position: absolute;
+     z-index: 1;
+     display: none;
+     width: 0;
+     height: 0;
+     border: 5px solid transparent;
+     content: "";
+   }
+   .left:hover:before,
+   .left:hover:after {
+     display: inline-block;
+   }
+ 
+
+
+ 
+
+ 
+ 
+   .left:before {
+     top: 50%;
+     right: calc(100% + 5px);
+     transform: translateY(-50%);
+   }
+   .left:after {
+     top: 50%;
+     right: 100%;
+     transform: translateY(-50%);
+     border-right-width: 0;
+     border-left-color: rgba(0, 0, 0, 0.8);
+   }
+
+
+.boton1{
+  margin: 5px;
+  text-align: center;
+  height: auto;
+  width: 200px;
+  height: auto;
+  float: right;
+
+}

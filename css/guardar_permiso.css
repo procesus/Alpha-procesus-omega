@@ -1,0 +1,25 @@
+body{
+    font-family: arial;
+    margin: 0;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+
+.caja{
+	margin-top: 5%;
+	justify-content: center;
+	display: flex;
+	justify-content: center;
+}
+
+.informacion{
+	background-color: rgb(243, 238, 236 );
+	border-radius: 8px;
+	padding: 10px 20px;
+	width: 70%;
+	height: auto;
+	
+
+}

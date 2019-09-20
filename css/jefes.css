@@ -1,0 +1,300 @@
+body{
+	font-family: arial;
+	margin: 0;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+
+/*IMPORTANTE NO BORRAR*/
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+
+ul{
+	list-style: none;
+}
+
+
+
+input[type="checkbox"]
+{
+	display: none;
+}
+
+nav{
+	background-color: #F0EFEF;
+	position: relative;
+	width: 197px;
+	height: 100%;
+	left: -360px;
+	position: absolute;
+	transition: all .5s;
+}
+input[type="checkbox"]:checked ~ nav
+{
+	transform: translate(360px);
+}
+
+
+ul{
+	top: 70px;
+	position: absolute;
+	width: 100%;
+}
+a{
+	display: block;
+	padding: 20px 5px;
+	color: black;
+	text-decoration: none;
+
+}
+
+
+label{
+	padding: 15px;
+	position: absolute;
+	z-index: 1;
+
+}
+
+.cuadro{
+	background-color: #F0EFEF;
+    position: absolute;
+    width: 100%;
+	height: auto;
+}
+
+.icono1{
+	/*background-color: #C9C5C4;
+	opacity: 0.8;*/
+	float:right;
+	margin: 13px;
+	
+
+}
+
+
+.boton1{
+	background-color: rgb(243, 5, 2);
+	opacity: 0.9;
+	margin: 5px;
+	text-align: center;
+	height: auto;
+	width: 200px;
+	float: right;
+	border-radius: 8px;
+	
+	
+}
+
+.boton1:hover{
+	background-color: rgb(243, 5, 2, 0.8);
+	opacity: 0.9;
+	margin: 5px;
+	text-align: center;
+	height: auto;
+	width: 200px;
+	float: right;
+	border-radius: 8px;
+	
+	
+}
+
+.boton2{
+	background-color: rgb(19, 210, 16);
+	opacity: 0.9;
+	margin: 5px;
+	text-align: center;
+	height: auto;
+	width: 200px;
+	float: right;
+	border-radius: 8px;
+	
+	
+}
+
+.boton2:hover{
+	background-color: rgb(19, 210, 16, 0.8);
+	opacity: 0.9;
+	margin: 5px;
+	text-align: center;
+	height: auto;
+	width: 200px;
+	float: right;
+	border-radius: 8px;
+	
+	
+}
+
+
+.puntero{
+	cursor: pointer;
+	width: 40px;
+}
+
+
+
+.padre {
+   /*background-color: red;*/
+   height: 25%;
+   display: flex;
+   justify-content: center;
+}
+
+
+.alineacion{
+	text-align: center;
+    background-color: #F0EFEF;
+	color: black;
+	height: 100px;
+	width: 200px;
+	opacity: 0.9;
+    padding: 10px;
+    margin: 88px;
+    display: inline-block;
+    border-radius: 5px;
+   
+}
+
+
+.alineacion:hover{
+	background-color: rgb(176,224,230);
+	opacity: 10.0;
+	color: black;
+	border-radius: 5px;
+
+}
+
+.alineacion img{
+	width: 40px;
+}
+
+/*.boton-desplegable{
+	background-color: #C9C5C4;
+	color: black;
+	opacity: 0.9;
+	margin: 5px;
+	text-align: center;
+	height: 55px;
+	width: 200px;
+	float: right;
+}*/
+
+.alineacion2{
+  float: right;
+}
+
+
+.form-register{
+
+    width: 95%;
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    border-radius: 7px;
+    
+}
+
+li:hover{
+	background-color: rgb(136, 16, 210, 0.5);
+}
+
+#blog .padre{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+}
+
+/*Circulo Perfil*/
+
+.circulo-gmail {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 2px solid #AAAAAA;
+    float: right;
+    position: relative;
+    margin-top: 80px;
+
+
+}
+
+.caja{
+	margin-top: 5%;
+	justify-content: center;
+	display: flex;
+}
+
+.informacion{
+	background-color: rgb(243, 238, 236 );
+	border-radius: 8px;
+	padding: 10px 20px;
+	width: 70%;
+	height: auto;
+
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+
+/*AYUDA CSS ALETAR DERECHA*/
+
+  .final__tooltip {
+    position: relative;
+    height: auto;
+    width: auto;
+    /*COLOR DE CONTORNO*/
+    /*background: #f2395a;*/
+    color: white;
+    line-height: 60px;
+    font-size: 18px;
+    margin: 0 auto;
+   }
+   .final__tooltip:before {
+     position: absolute;
+     z-index: 2;
+     display: none;
+     width: 200px;
+     max-width: 200px;
+     padding: 10px;
+     font-size: 0.8em;
+     line-height: 1.4;
+     border-radius: 5px;
+     background-color: rgba(0, 0, 0, 0.8);
+     color: white;
+     content: attr(title);
+   }
+   .final__tooltip:after {
+     position: absolute;
+     z-index: 1;
+     display: none;
+     width: 0;
+     height: 0;
+     border: 5px solid transparent;
+     content: "";
+   }
+   .final__tooltip:hover:before,
+   .final__tooltip:hover:after {
+     display: inline-block;
+     text-align: center;
+   }
+ 
+   .final__tooltip.right:before {
+     top: 50%;
+     left: calc(100% + 5px);
+     transform: translateY(-50%);
+   }
+   .final__tooltip.right:after {
+     top: 50%;
+     left: 100%;
+     transform: translateY(-50%);
+     border-left-width: 0;
+     border-right-color: rgba(0, 0, 0, 0.8);
+   }
+
+   /*----------------------------------------------------------------------------------------*/

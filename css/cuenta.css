@@ -1,0 +1,281 @@
+body{
+	font-family: arial;
+    margin: 0;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    object-fit: cover;
+}
+
+.padre{
+  background-color: #C1C1C1;
+  max-width: 480px;
+  height: 380px;
+  border-radius: 5px;
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hijo{
+  text-align: center;
+  margin-bottom: 100px;
+  background: rgb(252, 252, 252, 0.6);
+  border: 1px solid #000000;
+  border-radius: 8px;
+  height: 190px;
+}
+
+.sub-rayado {
+  color: black !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-color: #00D748;
+  transition: all 1s ease;
+  position: relative;
+  width: 80px;
+  margin: 10px;
+}
+.sub-rayado:hover {
+  background: #00BC42;
+  color: #fff !important;
+}
+
+
+.sub-rayado2 {
+  color: black !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-color: #CF0000;
+  transition: all 1s ease;
+  position: relative;
+  width: 80px;
+  margin: 10px;
+}
+.sub-rayado2:hover {
+  background: #B40000;
+  color: #fff !important;
+}
+
+
+
+.separacion-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.circulo {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	border: 2px solid #AAAAAA;
+}
+
+
+/*---------------------------------------IMPORTANTE NO BORRAR ""MENU""-------------------------------------*/
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+
+ul{
+  list-style: none;
+}
+
+
+input[type="checkbox"]
+{
+  display: none;
+}
+
+nav{
+  background-color: #F0EFEF;
+  width: 197px;
+  height: 100%;
+  left: -360px;
+  position: absolute;
+  transition: all .5s;
+}
+input[type="checkbox"]:checked ~ nav
+{
+  transform: translate(360px);
+}
+
+
+ul{
+  top: 70px;
+  position: absolute;
+  width: 100%;
+}
+a{
+  display: block;
+  padding: 20px 5px;
+  color: black;
+  text-decoration: none;
+
+}
+
+
+label{
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+
+}
+/*-------------------------------------------------------------------------------------------------------------*/
+
+
+.cuadro{
+  background-color: #F0EFEF;
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.icono1{
+  /*background-color: #C9C5C4;
+  opacity: 0.8;*/
+  float:right;
+  margin: 13px;
+  
+
+}
+
+
+.boton1{
+  margin: 5px;
+  text-align: center;
+  height: auto;
+  width: 200px;
+  height: auto;
+  float: right;
+
+}
+
+
+.puntero{
+  cursor: pointer;
+  width: 40px
+}
+
+
+
+
+.alineacion{
+  text-align: center;
+    background-color: #F0EFEF;
+  color: black;
+  height: 100px;
+  width: 200px;
+  opacity: 0.9;
+    padding: 10px;
+    margin: 88px;
+    display: inline-block;
+    border-radius: 5px;
+   
+}
+
+
+.alineacion:hover{
+  background-color: rgb(176,224,230);
+  opacity: 10.0;
+  color: black;
+  border-radius: 5px;
+
+}
+
+/*.boton-desplegable{
+  background-color: #C9C5C4;
+  color: black;
+  opacity: 0.9;
+  margin: 5px;
+  text-align: center;
+  height: 55px;
+  width: 200px;
+  float: right;
+}*/
+
+
+.form-register{
+
+    width: 95%;
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    border-radius: 7px;
+    
+}
+
+li:hover{
+  background-color: rgb(136, 16, 210, 0.5);
+}
+
+
+
+
+
+
+/*----------------------------------------------AYUDA CSS ALETAR DERECHA-------------------------------------------*/
+
+  .final__tooltip {
+    position: relative;
+    height: auto;
+    width: auto;
+    /*COLOR DE CONTORNO*/
+    /*background: #f2395a;*/
+    color: white;
+    line-height: 60px;
+    font-size: 18px;
+    margin: 0 auto;
+   }
+   .final__tooltip:before {
+     position: absolute;
+     z-index: 2;
+     display: none;
+     width: 200px;
+     max-width: 200px;
+     padding: 10px;
+     font-size: 0.8em;
+     line-height: 1.4;
+     border-radius: 5px;
+     background-color: rgba(0, 0, 0, 0.8);
+     color: white;
+     content: attr(title);
+   }
+   .final__tooltip:after {
+     position: absolute;
+     z-index: 1;
+     display: none;
+     width: 0;
+     height: 0;
+     border: 5px solid transparent;
+     content: "";
+   }
+   .final__tooltip:hover:before,
+   .final__tooltip:hover:after {
+     display: inline-block;
+     text-align: center;
+   }
+ 
+   .final__tooltip.right:before {
+     top: 50%;
+     left: calc(100% + 5px);
+     transform: translateY(-50%);
+   }
+   .final__tooltip.right:after {
+     top: 50%;
+     left: 100%;
+     transform: translateY(-50%);
+     border-left-width: 0;
+     border-right-color: rgba(0, 0, 0, 0.8);
+   }
+
+   /*--------------------------------------------------------------------------------------------------------------*/

@@ -1,0 +1,53 @@
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet"  href="css/estilos.css">
+	<link rel="stylesheet" type="text/css" href="css/iconos1/style.css">
+	<link rel="stylesheet" type="text/css" href="css/iconos2/style.css">
+	<link rel="stylesheet" type="text/css" href="css/iconos3/style.css">
+	<link rel="stylesheet" type="text/css" href="css/iconos4/style.css">
+	<link rel="stylesheet" type="text/css" href="css/iconos5/style.css">
+
+	<title>REGISTRO</title>
+</head>
+<body style="background-image:url(img/paisaje.jpg);">
+
+
+<div class="box">
+<center><font class="titulo" face="Showcard Gothic">REGISTRO</font></center>
+
+<form action="validar.php" method="POST" class="form-register">
+
+<center><font class="titulo2" face="Showcard Gothic">Nombre-Usuario</font></center>
+<input autocomplete="OFF" class="input-100" pattern="[a-zA-Z  ]{1,15}" type="text" name="nombre" placeholder="NOMBRE-USUARIO" required="">
+
+<center><font class="titulo2" face="Showcard Gothic">Tipo de Documento</font></center>
+ <select class="input-100" pattern="[a-zA-Z  ]{1,15}" type="text" name="fk_tipo_doc" >
+        <option value="1" class="es">Cedula</option> 
+        <option value="2" class="es">Cedula de extranjeria</option>
+ </select>
+
+
+<center><font class="titulo2" face="Showcard Gothic">Documento</font></center>
+<input autocomplete="OFF" class="input-100"  type="" name="documento" placeholder="DOCUMENTO" required="">
+
+<center><font class="titulo2" face="Showcard Gothic">Clave</font></center>
+<input autocomplete="OFF" class="input-100"  type="password" name="clave" placeholder="CLAVE" required="">
+
+
+<center>
+	<input type="submit" value="Registrar" id="boton">
+	<a class="No-cuenta1">¿Ya tienes cuenta? </a><br>
+    <font color="#E7A80C">!!!Usuario registrado correctamente!!!</font>
+</center>
+
+<center>
+<a href="login.html" class="No-cuenta2">INICIA SESION AQUI<i class="icon-one-finger-swipe-up1"></i></a>
+</center>
+
+
+</form>
+</div>
+
+
+</body>
