@@ -12,7 +12,7 @@
 
 	<title>USUARIOS</title>
 </head>
-<body style="background-image:url(img/banner2.jpg);">
+<body style="background-image:linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)),url(img/banner4.jpg);">
 
 
 
@@ -83,7 +83,7 @@ $sql = "SELECT * FROM permiso WHERE documento='$documento'";
 	}
 		if ($ffk_id_rol=="2")
 	{
-		echo "<div class='boton3'><img src='img/p3.png' width='80' height='70'><a href='admin'>Ir a Empleado</a></div>"; echo "</br>";
+		echo "<div class='boton3'><img src='img/p3.png' width='80' height='70'><a href='empleado.php'>Ir a Empleado</a></div>"; echo "</br>";
 		$_SESSION["empleado"]="1";
 	}
 		if ($ffk_id_rol=="3")
@@ -117,9 +117,9 @@ $nuevo->administrar();
 <div class="caja">
 <div class="informacion">
 	<center>
-	<img src="img/r1.png" width="300" height="280">
-	<img src="img/r2.jpg" width="300" height="280">
-	<img src="img/r3.png" width="300" height="280">
+	<img src="img/people-kids.jpg" width="300" height="280">
+	<img src="img/people-kids.jpg" width="300" height="280">
+	<img src="img/people-kids.jpg" width="300" height="280">
 	<a>Bienvenido a los perfiles de Peolpe Kids, elija su perfil.</a>
     </center>
 </div>

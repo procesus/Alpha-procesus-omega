@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="zxx">
+<!DOCTYPE>
+<html>
 <head>
 	<title>People Kids - Tienda infantil</title>
 	<meta charset="UTF-8">
@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
 	<link href="img/icon.ico" rel="shortcut icon"/>
+
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -33,7 +34,7 @@
 	</div>
 
 	<!-- Header section -->
-	<header class="header-section header-normal">
+	<header class="header-section">
 		<div class="container-fluid">
 			<!-- logo -->
 			<div class="site-logo">
@@ -60,45 +61,176 @@
 	<!-- Header section end -->
 
 
-	<!-- Page Info -->
-	<div class="page-info-section page-info-big">
-		<div class="container">
-			<h2>Prendas Niños</h2>
-			<div class="site-breadcrumb">
-				<a href="index.html">Inicio</a> /
-				<span>Niños</span>
-			</div>
-			<img src="img/slider/img4.png" alt="" class="cata-top-pic">
-		</div>
-	</div>
-	<!-- Page Info end -->
-
-
-	<!-- Page -->
-	<div class="page-area categorie-page spad">
-		<div class="container">
-			<div class="categorie-filter-warp">
-				<p>Mostrando 12 resultados</p>
-				<div class="cf-right">
-					<div class="cf-layouts">
-						<a href="#"><img src="img/icons/layout-1.png" alt=""></a>
-						<a class="active" href="#"><img src="img/icons/layout-2.png" alt=""></a>
+	<!-- Hero section -->
+	<section>
+		<section class="hero-section set-bg" data-setbg="img/bg2.jpg">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item">
+				<div class="hs-left"><img src="img/slider/img.png" alt=""></div>
+				<div class="hs-right">
+					<div class="hs-content">
+						<div class="price">Desde $100.000</div>
+						<h2><span>2019</span> <br>Coleccion Niños</h2>
+						<a href="" class="site-btn">Comprar Ahora!</a>
 					</div>
-					<form action="#">
-						<select>
-							<option>Color</option>
-						</select>
-						<select>
-							<option>Marca</option>
-						</select>
-						<select>
-							<option>Ordenar por</option>
-						</select>
-					</form>
 				</div>
 			</div>
+			<div class="hs-item">
+				<div class="hs-left"><img src="img/slider/img2.png" alt=""></div>
+				<div class="hs-right">
+					<div class="hs-content">
+						<div class="price">Desde $100.000</div>
+						<h2><span>2019</span> <br>Coleccion Niñas</h2>
+						<a href="" class="site-btn">Comprar Ahora!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+	<!-- Intro section -->
+
+	<section class="intro-section spad pb-0">
+		<div class="section-title">
+			<h2>Productos Unicos</h2>
+		</div>
+
+
+		<div class="intro-slider">
+			<ul class="slidee">
+
+				<?php
+				include("conexion.php");
+					$sql = "select * from producto where fk_estado_producto='1' order by producto.id_producto desc";
+			        if(!$result = $db->query($sql))
+			        {
+			            die('Hay un error corriendo en la consulta [' . $db->connect_error . ']');
+			        }
+			        while($row = $result->fetch_assoc())
+			        {
+			            $iid_producto = $row['id_producto'];
+			            $nnombre = $row['descripcion'];
+			            $pprecio = $row['precio'];
+			            $sqli="select imagen from producto where id_producto='$iid_producto'";
+			            $res=mysqli_query($db,$sqli);
+			            $data=mysqli_fetch_array($res);
+
+			            echo '<li>';
+						echo '<div class="intro-item">';
+						echo '<figure>';
+			            echo '<img src="'.$data['imagen'].'" width="400" height="340">';
+			            echo '</figure>';
+						echo '<div class="product-info">';
+						echo '<h5>'.$nnombre.'</h5>';
+						echo '<p><font color="black"><a>$'.$pprecio.'</a></font></p>';
+						echo '</div>';
+						echo '</div>';
+						echo '</li>';
+			        }
+				?>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="img/intro/1.jpg" alt="#" width="400" height="340">
+						</figure>
+						<div class="product-info">
+							<h5>Pink Sunglasses</h5>
+							<p><font color="black">$319.50</font></p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="img/intro/2.jpg" alt="#" width="400" height="340">
+						</figure>
+						<div class="product-info">
+							<h5>Black Nighty</h5>
+							<p><font color="black">$319.50</font></p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="img/intro/3.jpg" alt="#" width="400" height="340">
+							<div class="bache">Nuevo</div>
+						</figure>
+						<div class="product-info">
+							<h5>Yellow Sholder bag</h5>
+							<p><font color="black">$319.50</font></p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="img/intro/4.jpg" alt="#" width="400" height="340">
+						</figure>
+						<div class="product-info">
+							<h5>Yellow Sunglasses</h5>
+							<p><font color="black">$319.50</font></p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="intro-item">
+						<figure>
+							<img src="img/intro/5.jpg" alt="#" width="400" height="340">
+						</figure>
+						<div class="product-info">
+							<h5>Black Sholder bag</h5>
+							<p><font color="black">$319.50</font></p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="container">
+			<div class="scrollbar">
+				<div class="handle">
+					<div class="mousearea"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Intro section end -->
+
+
+	<!-- Featured section -->
+	<div class="featured-section spad">
+		<div class="container">
 			<div class="row">
-				<div class="col-lg-3">
+				<div class="col-md-6">
+					<div class="featured-item">
+						<img src="img/4.jpg" alt="">
+						<a href="#" class="site-btn">Ver mas</a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="featured-item mb-0">
+						<img src="img/5.jpg" alt="">
+						<a href="#" class="site-btn">Ver mas</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Featured section end -->
+
+
+	<!-- Product section -->
+	<section class="product-section spad">
+		<div class="container">
+			<ul class="product-filter controls">
+				<li class="control" data-filter=".new">Nuevos</li>
+				<li class="control" data-filter="all">Recomendado</li>
+				<li class="control" data-filter=".best">Mas vendidos</li>
+			</ul>
+			<div class="row" id="product-filter">
+				<div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
 							<img src="img/products/1.jpg" alt="">
@@ -115,11 +247,12 @@
 						</figure>
 						<div class="product-info">
 							<h6>Long red Shirt</h6>
-							<p>$39.90</p>
+							<p><font color="black">$39.90</font></p>
+
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="mix col-lg-3 col-md-6 new">
 					<div class="product-item">
 						<figure>
 							<img src="img/products/2.jpg" alt="">
@@ -137,11 +270,12 @@
 						</figure>
 						<div class="product-info">
 							<h6>Hype grey shirt</h6>
-							<p>$19.50</p>
+							<p><font color="black">$19.50</font></p>
+
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
 							<img src="img/products/3.jpg" alt="">
@@ -158,11 +292,12 @@
 						</figure>
 						<div class="product-info">
 							<h6>long sleeve jacket</h6>
-							<p>$59.90</p>
+							<p><font color="black">$59.90</font></p>
+
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="mix col-lg-3 col-md-6 new best">
 					<div class="product-item">
 						<figure>
 							<img src="img/products/4.jpg" alt="">
@@ -180,11 +315,12 @@
 						</figure>
 						<div class="product-info">
 							<h6>Denim men shirt</h6>
-							<p>$32.20 <span>RRP 64.40</span></p>
+							<p><font color="black">$32.20</font></p>
+
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
 							<img src="img/products/5.jpg" alt="">
@@ -201,11 +337,12 @@
 						</figure>
 						<div class="product-info">
 							<h6>Long red Shirt</h6>
-							<p>$39.90</p>
+							<p><font color="black">$39.90</font></p>
+
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="mix col-lg-3 col-md-6 new">
 					<div class="product-item">
 						<figure>
 							<img src="img/products/6.jpg" alt="">
@@ -223,11 +360,12 @@
 						</figure>
 						<div class="product-info">
 							<h6>Hype grey shirt</h6>
-							<p>$19.50</p>
+							<p><font color="black">$19.50</font></p>
+
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
 							<img src="img/products/7.jpg" alt="">
@@ -244,11 +382,12 @@
 						</figure>
 						<div class="product-info">
 							<h6>long sleeve jacket</h6>
-							<p>$59.90</p>
+							<p><font color="black">$59.90</font></p>
+
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
 							<img src="img/products/8.jpg" alt="">
@@ -265,107 +404,65 @@
 						</figure>
 						<div class="product-info">
 							<h6>Denim men shirt</h6>
-							<p>$32.20 <span>RRP 64.40</span></p>
+							<p><font color="black">$32.20</font></p>
+
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
-					<div class="product-item">
-						<figure>
-							<img src="img/products/9.jpg" alt="">
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
-									<p>Vista rapida</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
-									<p>Guardar</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Long red Shirt</h6>
-							<p>$39.90</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="product-item">
-						<figure>
-							<img src="img/products/10.jpg" alt="">
-							<div class="bache">Nuevo</div>
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
-									<p>Vista rapida</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
-									<p>Guardar</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Hype grey shirt</h6>
-							<p>$19.50</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="product-item">
-						<figure>
-							<img src="img/products/11.jpg" alt="">
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
-									<p>Vista rapida</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
-									<p>Guardar</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>long sleeve jacket</h6>
-							<p>$59.90</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="product-item">
-						<figure>
-							<img src="img/products/12.jpg" alt="">
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
-									<p>Vista rapida</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
-									<p>Guardar</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Denim men shirt</h6>
-							<p>$32.20 <span>RRP 64.40</span></p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="site-pagination">
-				<span class="active">01.</span>
-				<a href="">02.</a>
-				<a href="">03.</a>
-				<a href="">04.</a>
-				<a href="">05.</a>
-				<a href="">06</a>
 			</div>
 		</div>
-	</div>
-	<!-- Page -->
+	</section>
+	<!-- Product section end -->
+
+
+	<!-- Blog section -->	
+	<section class="blog-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<div class="featured-item">
+						<img src="img/6.jpg" alt="">
+						<a href="#" class="site-btn">Ver Más</a>
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<h4 class="bgs-title">Recomendaciones de Moda</h4>
+					<div class="blog-item">
+						<div class="bi-thumb">
+							<img src="img/1.jpg" alt="">
+						</div>
+						<div class="bi-content">
+							<h5>10 tips to dress like a queen</h5>
+							<div class="bi-meta">July 02, 2018   |   By maria deloreen</div>
+							<a href="#" class="readmore">Read More</a>
+						</div>
+					</div>
+					<div class="blog-item">
+						<div class="bi-thumb">
+							<img src="img/2.jpg" alt="">
+						</div>
+						<div class="bi-content">
+							<h5>Fashion Outlet products</h5>
+							<div class="bi-meta">July 02, 2018   |   By Jessica Smith</div>
+							<a href="#" class="readmore">Read More</a>
+						</div>
+					</div>
+					<div class="blog-item">
+						<div class="bi-thumb">
+							<img src="img/3.jpg" alt="">
+						</div>
+						<div class="bi-content">
+							<h5>the little black dress just for you</h5>
+							<div class="bi-meta">July 02, 2018   |   By maria deloreen</div>
+							<a href="#" class="readmore">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog section end -->	
+
 
 
 	<!-- Footer top section -->
@@ -414,8 +511,7 @@
 	</section>
 	<!-- Footer top section end -->
 
-
-	<!-- Footer section -->
+		<!-- Footer section -->
 	<footer class="footer-section">
 		<div class="container">
 			<p class="copyright">

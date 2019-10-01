@@ -34,7 +34,7 @@ if ($cont!="0")
 
 if ($cont=="0")
 {
-	header("Location:index.html");
+	header("Location:login.html");
 }
 
 

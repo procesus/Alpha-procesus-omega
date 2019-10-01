@@ -23,7 +23,7 @@
 
 	<title>Cuenta Perfil</title>
 </head>
-<body style="background-image:url(img/banner2.jpg);">
+<body style="background-image:url(img/banner5.jpg);">
 
 	<input type="checkbox" id="chec" >
 	<label for="chec">

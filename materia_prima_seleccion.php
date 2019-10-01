@@ -39,7 +39,7 @@
 	    </div>
 
 	    <div class="boton2">
-	    	<a href="usuarios/tabla_usuarios.php" class="icon-user-md">&nbsp;<font size="4">Usuarios.</font></a>
+	    	<a href="tabla_usuarios.php" class="icon-user-md">&nbsp;<font size="4">Usuarios.</font></a>
 	    </div>
     </div> 
 

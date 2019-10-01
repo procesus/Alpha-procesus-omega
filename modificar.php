@@ -19,7 +19,7 @@
 	<link rel="stylesheet"  href="css/modificar.css">
 
 
-<body style="background-image:url(img/banner2.jpg);">
+<body style="background-image:url(img/banner5.jpg);">
 
 		<div class="boton1">
 	    	<img src="img/people-kids.jpg" width="140" height="60"></img>
